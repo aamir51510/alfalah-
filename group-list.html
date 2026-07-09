@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفلاح ترسٹ کوٹلی پٹھاناں - فنڈز ٹریکر 2026</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+
+        .urdu-title {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            line-height: 2;
+        }
+
+        .header-bg {
+            background-color: #065f46;
+            background-image: linear-gradient(135deg, #213883 0%, #10b981 100%);
+    </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen text-slate-800 pb-12 antialiased">
+
+    <header class="header-bg text-white shadow-xl py-8 px-4 mb-8 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-emerald-950/40 pointer-events-none"></div>
+        <div class="relative z-10">
+            <h1 class="text-3xl md:text-5xl urdu-title font-bold mb-4 drop-shadow-md">الفلاح ٹرسٹ کوٹلی پٹھاناں</h1>
+            <h2
+                class="text-xl font-medium tracking-wide opacity-90 border-b border-emerald-500/30 pb-4 max-w-xs mx-auto">
+                سالانہ فنڈ شیڈول 2026</h2>
+            <div
+                class="mt-6 flex flex-wrap justify-center gap-4 text-sm bg-black/20 backdrop-blur-md p-4 rounded-xl max-w-3xl mx-auto border border-white/10 shadow-inner">
+                <p class="flex items-center gap-1"><strong>🔹 اکاؤنٹ:</strong> محمد ذیشان خان شیروانی (الائیڈ بینک)</p>
+                <p class="flex items-center gap-1"><strong>🔹 IBAN:</strong> <span
+                        class="tracking-wider font-mono bg-emerald-900/40 px-2 py-0.5 rounded text-amber-300">PK54ABPA0010000236440016</span>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <div class="space-y-6 lg:col-span-1">
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 transition hover:shadow-lg">
+                <h3
+                    class="text-lg font-bold mb-4 text-emerald-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                    <span>📊</span> خلاصہ رپورٹ
+                </h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-4 rounded-xl text-center border border-slate-100 shadow-sm">
+                        <span class="text-xs text-slate-500 block mb-1">کل ممبران</span>
+                        <span id="total-members-count" class="text-3xl font-extrabold text-slate-700 font-mono">0</span>
+                    </div>
+                    <div class="bg-emerald-50 p-4 rounded-xl text-center border border-emerald-100 shadow-sm">
+                        <span class="text-xs text-emerald-600 block mb-1">وصول شدہ فنڈز</span>
+                        <span id="total-funds-collected" class="text-2xl font-extrabold text-emerald-700">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 transition hover:shadow-lg">
+                <h3
+                    class="text-lg font-bold mb-4 text-emerald-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                    <span>👤</span> نیا ممبر شامل کریں
+                </h3>
+                <form id="add-member-form" class="space-y-4 text-right">
+                    <div>
+                        <label class="block text-sm font-semibold mb-1 text-slate-600">ممبر کا نام</label>
+                        <input type="text" id="member-name" required placeholder="مثال: محمد علی"
+                            class="w-full p-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition bg-slate-50/50 focus:bg-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1 text-slate-600">واٹس ایپ / فون نمبر</label>
+                        <input type="tel" id="member-phone" placeholder="923001234567" required
+                            class="w-full p-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none text-left transition bg-slate-50/50 focus:bg-white font-mono"
+                            dir="ltr">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-sm font-semibold mb-1 text-slate-600">مقرر کردہ مہینہ</label>
+                            <select id="member-month"
+                                class="w-full p-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition bg-slate-50/50 focus:bg-white">
+                                <option value="1">جنوری</option>
+                                <option value="2">فروری</option>
+                                <option value="3">مارچ</option>
+                                <option value="4">اپریل</option>
+                                <option value="5">مئی</option>
+                                <option value="6">جون</option>
+                                <option value="7">جولائی</option>
+                                <option value="8">اگست</option>
+                                <option value="9">ستمبر</option>
+                                <option value="10">اکتوبر</option>
+                                <option value="11">نومبر</option>
+                                <option value="12">دسمبر</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-1 text-slate-600">فنڈ رقم (روپے)</label>
+                            <input type="number" id="member-amount" placeholder="رقم لکھیں" min="0" required
+                                class="w-full p-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition bg-slate-50/50 focus:bg-white font-mono">
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-md hover:shadow-lg transform active:scale-[0.98] transition cursor-pointer text-center">
+                        ✨ ممبر شامل کریں
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-6">
+            <div
+                class="bg-amber-50 border border-amber-200 p-4 rounded-2xl text-amber-900 text-sm flex items-start gap-3 shadow-sm">
+                <span class="text-2xl mt-0.5">💡</span>
+                <div>
+                    <p class="font-bold mb-0.5">ہدایت برائے رقم تبدیل کرنا:</p>
+                    <p class="opacity-90">اب آپ کسی بھی ممبر کی فنڈ رقم ٹیبل کے اندر بکس میں براہِ راست لکھ کر تبدیل کر
+                        سکتے ہیں۔ لکھی ہوئی رقم خود بخود محفوظ ہو جائے گی۔</p>
+                </div>
+            </div>
+
+            <div id="months-container" class="space-y-6">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Default list with 0 amount (Clean setup)
+        const defaultMembers = [
+            { id: "1", name: "زین اکبر امتیاز خان", phone: "923001234567", month: 1, amount: 0, paid: false },
+            { id: "2", name: "امانت علی محمد سردار", phone: "923001234567", month: 1, amount: 0, paid: false },
+            { id: "3", name: "عامر سجاد محمد یونس خان", phone: "96566501804", month: 2, amount: 0, paid: false },
+            { id: "4", name: "محمد ذیشان خان منور خان", phone: "923001234567", month: 2, amount: 0, paid: false },
+            { id: "5", name: "احسان اللہ ناصر خان", phone: "923001234567", month: 3, amount: 0, paid: false },
+            { id: "6", name: "اویس خان محمد ارشد خان", phone: "923001234567", month: 3, amount: 0, paid: false },
+            { id: "7", name: "محمد راسب خان", phone: "923001234567", month: 3, amount: 0, paid: false },
+            { id: "8", name: "بلال خان اکرم خان", phone: "923001234567", month: 4, amount: 0, paid: false },
+            { id: "9", name: "احمد سبحانی غلام میراں", phone: "923001234567", month: 4, amount: 0, paid: false },
+            { id: "10", name: "محمد ایاز خان منور خان", phone: "923001234567", month: 5, amount: 0, paid: false },
+            { id: "11", name: "خلیل خان رشید خان", phone: "923001234567", month: 5, amount: 0, paid: false },
+            { id: "12", name: "محسن خان رحمت خان", phone: "923001234567", month: 5, amount: 0, paid: false },
+            { id: "13", name: "فواد خان منور خان", phone: "923001234567", month: 6, amount: 0, paid: false },
+            { id: "14", name: "امجد خان عظمت خان", phone: "923001234567", month: 6, amount: 0, paid: false },
+            { id: "15", name: "احتشام خان منور خان", phone: "923001234567", month: 7, amount: 0, paid: false },
+            { id: "16", name: "شاہد خان ولد تاج خان", phone: "923001234567", month: 7, amount: 0, paid: false },
+            { id: "17", name: "محمد لیاقت محمد سردار", phone: "923001234567", month: 7, amount: 0, paid: false },
+            { id: "18", name: "عبدالقدیر خان مشتاق خان", phone: "923001234567", month: 8, amount: 0, paid: false },
+            { id: "19", name: "شان علی محمد غضنفر", phone: "923001234567", month: 8, amount: 0, paid: false },
+            { id: "20", name: "مظہر خان نواز خان", phone: "923001234567", month: 8, amount: 0, paid: false },
+            { id: "21", name: "سلامت خان یوسف خان (مرحوم)", phone: "923001234567", month: 9, amount: 0, paid: false },
+            { id: "22", name: "شہباز خان اشفاق خان", phone: "923001234567", month: 9, amount: 0, paid: false },
+            { id: "23", name: "علی شان محمد انور خان", phone: "923001234567", month: 9, amount: 0, paid: false },
+            { id: "24", name: "افتخار خان اصغر خان", phone: "923001234567", month: 9, amount: 0, paid: false },
+            { id: "25", name: "جہانزیب خان عبد الخالق خان", phone: "923001234567", month: 9, amount: 0, paid: false },
+            { id: "26", name: "ندیم خان ریاض خان", phone: "923001234567", month: 10, amount: 0, paid: false },
+            { id: "27", name: "اللہ رکھا محمد صادق", phone: "923001234567", month: 10, amount: 0, paid: false },
+            { id: "28", name: "محمد بشارت احمد خان", phone: "923001234567", month: 10, amount: 0, paid: false },
+            { id: "29", name: "علی ظفر محمد ظفر خان", phone: "923001234567", month: 11, amount: 0, paid: false },
+            { id: "30", name: "علی یعقوب محمد یعقوب", phone: "923001234567", month: 11, amount: 0, paid: false },
+            { id: "31", name: "اورنگزیب خان رحمت خان", phone: "923001234567", month: 12, amount: 0, paid: false },
+            { id: "32", name: "محمد علی محمد ایوب خان", phone: "923001234567", month: 12, amount: 0, paid: false },
+            { id: "33", name: "عمر خان و قار خان", phone: "923001234567", month: 12, amount: 0, paid: false }
+        ];
+
+        const monthNames = {
+            1: "جنوری", 2: "فروری", 3: "مارچ", 4: "اپریل", 5: "مئی", 6: "جون",
+            7: "جولائی", 8: "اگست", 9: "ستمبر", 10: "اکتوبر", 11: "نومبر", 12: "دسمبر"
+        };
+
+        let members = JSON.parse(localStorage.getItem('alFalahMembers')) || defaultMembers;
+
+        function saveData() {
+            localStorage.setItem('alFalahMembers', JSON.stringify(members));
+            renderDashboard();
+        }
+
+        function checkReminderStatus(monthNumber) {
+            const today = new Date();
+            const currentYear = today.getFullYear();
+            const currentMonth = today.getMonth() + 1;
+
+            const targetDueDate = new Date(currentYear, monthNumber - 1, 5);
+            const timeDiff = targetDueDate - today;
+            const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+            return (daysRemaining <= 5 && daysRemaining >= 0) || (currentMonth > monthNumber);
+        }
+
+        function updateAmount(id, value) {
+            const amt = parseInt(value) || 0;
+            members = members.map(m => m.id === id ? { ...m, amount: amt } : m);
+            // Save data quietly without full re-render to keep input focus
+            localStorage.setItem('alFalahMembers', JSON.stringify(members));
+
+            // Recalculate total funds
+            let totalCollected = 0;
+            members.forEach(m => { if (m.paid) totalCollected += m.amount; });
+            document.getElementById('total-funds-collected').innerText = totalCollected.toLocaleString() + " روپے";
+        }
+
+        function renderDashboard() {
+            const container = document.getElementById('months-container');
+            container.innerHTML = '';
+
+            let totalCollected = 0;
+            document.getElementById('total-members-count').innerText = members.length;
+
+            for (let m = 1; m <= 12; m++) {
+                const monthMembers = members.filter(member => member.month == m);
+                if (monthMembers.length === 0) continue;
+
+                const monthCard = document.createElement('div');
+                monthCard.className = "bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden transition hover:shadow-lg";
+
+                let tableRows = '';
+                monthMembers.forEach(member => {
+                    if (member.paid) totalCollected += Number(member.amount);
+
+                    const isDueSoon = checkReminderStatus(m) && !member.paid;
+                    const rowBg = isDueSoon ? 'bg-amber-50/70 hover:bg-amber-100/70' : 'hover:bg-slate-50/80';
+
+                    const messageText = encodeURIComponent(`السلام علیکم ${member.name}! الفلاح ٹرسٹ فنڈ 2026 برائے مہینہ ${monthNames[m]} کی رقم ${Number(member.amount).toLocaleString()} روپے جمع کروانے کا وقت آ گیا ہے۔ براہ کرم جلد از جلد اکاؤنٹ میں جمع کروا کر مطلع کریں۔ شکریہ!`);
+                    const whatsappUrl = `https://wa.me/${member.phone}?text=${messageText}`;
+
+                    tableRows += `
+                        <tr class="border-t border-slate-100 ${rowBg} transition text-sm">
+                            <td class="p-3.5 font-semibold text-right text-slate-700">${member.name}</td>
+                            <td class="p-3.5 text-center">
+                                <a href="${whatsappUrl}" target="_blank" class="text-blue-600 hover:text-blue-800 font-mono inline-flex items-center gap-1 bg-blue-50 px-2.5 py-1 rounded-full text-xs font-semibold border border-blue-100 transition hover:bg-blue-100" dir="ltr">
+                                    💬 +${member.phone}
+                                </a>
+                            </td>
+                            <td class="p-3.5 text-center font-mono">
+                                <input type="number" value="${member.amount || ''}" placeholder="0" 
+                                    oninput="updateAmount('${member.id}', this.value)"
+                                    class="w-24 p-1 text-center border border-slate-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none bg-slate-50 font-bold text-slate-800">
+                            </td>
+                            <td class="p-3.5 text-center">
+                                <button onclick="togglePaid('${member.id}')" class="px-3 py-1 rounded-full text-xs font-bold shadow-sm cursor-pointer transition transform active:scale-95 ${member.paid ? 'bg-emerald-100 text-emerald-800 border border-emerald-200' : 'bg-rose-100 text-rose-800 border border-rose-200'}">
+                                    ${member.paid ? '● اداء شدہ' : '○ باقی ہے'}
+                                </button>
+                            </td>
+                            <td class="p-3.5 text-center">
+                                <div class="flex justify-center gap-2">
+                                    ${isDueSoon ? `
+                                        <a href="${whatsappUrl}" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-white text-xs px-2.5 py-1 rounded-lg shadow-sm font-semibold transition flex items-center gap-1">
+                                            🔔 ریمائنڈر
+                                        </a>
+                                    ` : ''}
+                                    <button onclick="removeMember('${member.id}')" class="text-rose-500 hover:text-white text-xs px-2.5 py-1 rounded-lg border border-rose-200 hover:bg-rose-500 transition shadow-sm font-semibold cursor-pointer">
+                                        حذف
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                monthCard.innerHTML = `
+                    <div class="bg-gradient-to-r from-slate-100 to-slate-50 px-5 py-4 font-bold text-slate-700 flex justify-between items-center border-b border-slate-200">
+                        <span class="text-base flex items-center gap-1.5">📅 مہینہ: ${monthNames[m]}</span>
+                        <span class="text-xs bg-emerald-700 text-white px-3 py-1 rounded-full shadow-sm font-medium">${monthMembers.length} ممبران</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-right border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50/50 text-slate-500 text-xs font-bold uppercase tracking-wider border-b border-slate-100">
+                                    <th class="p-3 text-right">نام</th>
+                                    <th class="p-3 text-center">واٹس ایپ چیٹ</th>
+                                    <th class="p-3 text-center w-28">رقم (PKR)</th>
+                                    <th class="p-3 text-center">سٹیٹس</th>
+                                    <th class="p-3 text-center">اقدامات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${tableRows}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+                container.appendChild(monthCard);
+            }
+
+            document.getElementById('total-funds-collected').innerText = totalCollected.toLocaleString() + " روپے";
+        }
+
+        window.togglePaid = function (id) {
+            members = members.map(m => m.id === id ? { ...m, paid: !m.paid } : m);
+            saveData();
+        };
+
+        window.removeMember = function (id) {
+            if (confirm("کیا آپ واقعی اس ممبر کو فہرست سے ہٹانا چاہتے ہیں؟")) {
+                members = members.filter(m => m.id !== id);
+                saveData();
+            }
+        };
+
+        document.getElementById('add-member-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const newMember = {
+                id: Date.now().toString(),
+                name: document.getElementById('member-name').value,
+                phone: document.getElementById('member-phone').value.replace(/\D/g, ''),
+                month: parseInt(document.getElementById('member-month').value),
+                amount: parseInt(document.getElementById('member-amount').value) || 0,
+                paid: false
+            };
+
+            members.push(newMember);
+            saveData();
+            this.reset();
+        });
+
+        // Run layout script
+        renderDashboard();
+    </script>
+</body>
+
+</html>
