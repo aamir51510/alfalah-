@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Tools | Al-Falah Foundation Kotli Pathana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f766e;
+            --primary-light: #14b8a6;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-urdu {
+            font-family: 'Noto Nastaliq Urdu', 'Amiri', serif;
+            direction: rtl;
+            line-height: 2;
+        }
+
+        .font-arabic {
+            font-family: 'Amiri', serif;
+        }
+
+        .compass {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #fff, #e2e8f0);
+            border: 5px solid var(--primary);
+            position: relative;
+            margin: 0 auto;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .compass-arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 85px solid #dc2626;
+            transform-origin: bottom center;
+            transform: translate(-50%, -100%) rotate(0deg);
+            transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 10;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .compass-arrow::after {
+            content: '▲';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #dc2626;
+            font-size: 14px;
+        }
+
+        .compass-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            background: #1f2937;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 20;
+            border: 3px solid #fff;
+        }
+
+        .compass-ring {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px dashed rgba(15, 118, 110, 0.2);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .prayer-time-card {
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            border: 1px solid #bbf7d0;
+        }
+
+        .prayer-active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border-color: var(--primary);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-teal-800 to-teal-900 text-white py-6 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="index.html"
+                    class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition"><i
+                        class="fas fa-arrow-left"></i></a>
+                <div>
+                    <h1 class="text-2xl font-bold">Islamic Tools</h1>
+                    <p class="text-teal-200 text-sm">Al-Falah Foundation - Kotli Pathana</p>
+                </div>
+            </div>
+            <div class="text-right">
+                <p class="text-teal-200 text-sm" id="current-date">Loading...</p>
+                <p class="text-teal-300 text-xs font-mono" id="current-time">--:--:--</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Prayer Times Full Display -->
+        <section class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Today's Prayer Times</h2>
+                <p class="text-gray-500" id="prayer-location">Kotli Pathana, Pakistan</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8" id="prayer-grid">
+                <div class="col-span-full text-center py-12">
+                    <div
+                        class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-teal-200 border-t-teal-600">
+                    </div>
+                    <p class="text-gray-500 mt-4">Loading prayer times...</p>
+                </div>
+            </div>
+            <div
+                class="max-w-xl mx-auto bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl p-6 text-white text-center shadow-xl">
+                <p class="text-teal-100 text-sm mb-2">Next Prayer</p>
+                <h3 class="text-3xl font-bold mb-2" id="next-prayer-name">--</h3>
+                <div class="text-5xl font-mono font-bold tracking-wider" id="countdown-timer">00:00:00</div>
+                <p class="text-teal-200 text-sm mt-2" id="next-prayer-time">--:--</p>
+            </div>
+        </section>
+
+        <!-- Qibla Direction -->
+        <section class="mb-12">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center"><i
+                        class="fas fa-compass text-teal-600 mr-2"></i>Qibla Direction</h2>
+                <div class="compass mb-6">
+                    <div class="compass-ring"></div>
+                    <div class="compass-arrow" id="qibla-arrow"></div>
+                    <div class="compass-center"></div>
+                    <div class="absolute top-3 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-400">N</div>
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-400">S</div>
+                    <div class="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400">W</div>
+                    <div class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400">E</div>
+                </div>
+                <p class="text-center text-gray-600 mb-4" id="qibla-status">Click to find Qibla direction</p>
+                <button onclick="findQibla()"
+                    class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-xl transition shadow-md flex items-center justify-center gap-2 max-w-xs mx-auto"><i
+                        class="fas fa-location-arrow"></i>Locate Me</button>
+            </div>
+        </section>
+
+        <!-- Zakat Calculator -->
+        <section class="mb-12">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+                <h2 class="text-2xl font-bold text-emerald-800 mb-6"><i
+                        class="fas fa-calculator text-emerald-600 mr-2"></i>Zakat Calculator</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Gold & Jewelry Value (PKR)</label>
+                        <div class="relative"><span
+                                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">Rs.</span><input
+                                type="number" id="gold-val"
+                                class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none"
+                                placeholder="0"></div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Cash, Bank & Silver (PKR)</label>
+                        <div class="relative"><span
+                                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">Rs.</span><input
+                                type="number" id="cash-val"
+                                class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none"
+                                placeholder="0"></div>
+                    </div>
+                </div>
+                <div
+                    class="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100 flex justify-between items-center">
+                    <span class="font-bold text-emerald-800">Total Zakat (2.5%)</span>
+                    <span class="text-2xl font-bold text-emerald-600" id="zakat-result">Rs. 0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ramadan Calendar -->
+        <section class="mb-12">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4"><i
+                        class="fas fa-calendar-alt text-blue-600 mr-2"></i>Ramadan Calendar 2026</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="text-xs text-gray-600 uppercase bg-blue-100">
+                            <tr>
+                                <th class="px-3 py-2 text-left rounded-tl-lg">Day</th>
+                                <th class="px-3 py-2 text-left">Date</th>
+                                <th class="px-3 py-2 text-center">Sehri</th>
+                                <th class="px-3 py-2 text-center rounded-tr-lg">Iftar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ramadan-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Islamic Resources -->
+        <section class="mb-12">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+                <h2 class="text-2xl font-bold text-purple-800 mb-4"><i
+                        class="fas fa-book-quran text-purple-600 mr-2"></i>Islamic Resources</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <a href="https://quran.com" target="_blank"
+                        class="flex items-center p-4 bg-purple-50 rounded-xl border border-purple-100 hover:border-purple-300 hover:shadow-md transition group">
+                        <div
+                            class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-purple-200 transition">
+                            <i class="fas fa-book-open text-purple-600 text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Read Quran Online</h4>
+                            <p class="text-xs text-gray-500">quran.com</p>
+                        </div>
+                        <i class="fas fa-external-link-alt ml-auto text-gray-300 group-hover:text-purple-500"></i>
+                    </a>
+                    <a href="https://sunnah.com" target="_blank"
+                        class="flex items-center p-4 bg-amber-50 rounded-xl border border-amber-100 hover:border-amber-300 hover:shadow-md transition group">
+                        <div
+                            class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-amber-200 transition">
+                            <i class="fas fa-scroll text-amber-600 text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Hadith & Sunnah</h4>
+                            <p class="text-xs text-gray-500">sunnah.com</p>
+                        </div>
+                        <i class="fas fa-external-link-alt ml-auto text-gray-300 group-hover:text-amber-500"></i>
+                    </a>
+                    <a href="https://aladhan.com" target="_blank"
+                        class="flex items-center p-4 bg-teal-50 rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-md transition group">
+                        <div
+                            class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-teal-200 transition">
+                            <i class="fas fa-mosque text-teal-600 text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Al-Adhan API</h4>
+                            <p class="text-xs text-gray-500">aladhan.com</p>
+                        </div>
+                        <i class="fas fa-external-link-alt ml-auto text-gray-300 group-hover:text-teal-500"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm"> Al-Falah Foundation Kotli Pathana. Prayer times powered by <a
+                    href="https://aladhan.com" target="_blank" class="text-teal-400 hover:underline">Aladhan.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        let prayerTimesData = null;
+        let countdownInterval = null;
+
+        // Clock
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('current-time').textContent = now.toLocaleTimeString('en-GB');
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Prayer Times
+        function renderPrayerGrid(timings) {
+            const prayers = [
+                { name: 'Fajr', icon: 'fa-sun', key: 'Fajr' },
+                { name: 'Sunrise', icon: 'fa-arrow-up', key: 'Sunrise' },
+                { name: 'Dhuhr', icon: 'fa-sun', key: 'Dhuhr' },
+                { name: 'Asr', icon: 'fa-cloud-sun', key: 'Asr' },
+                { name: 'Maghrib', icon: 'fa-moon', key: 'Maghrib' },
+                { name: 'Isha', icon: 'fa-star', key: 'Isha' }
+            ];
+            const grid = document.getElementById('prayer-grid');
+            grid.innerHTML = '';
+
+            const now = new Date();
+            let nextPrayer = null, nextTime = null, minDiff = Infinity;
+
+            prayers.forEach((p, i) => {
+                const t = timings[p.key].split(':');
+                const prayerDate = new Date();
+                prayerDate.setHours(parseInt(t[0], 10), parseInt(t[1], 10), 0);
+                const isActive = prayerDate > now && (prayerDate - now) < minDiff && !nextPrayer;
+                if (prayerDate > now && (prayerDate - now) < minDiff) {
+                    minDiff = prayerDate - now;
+                    nextPrayer = p.name;
+                    nextTime = timings[p.key];
+                }
+
+                const div = document.createElement('div');
+                div.className = 'prayer-time-card p-6 rounded-2xl text-center animate-in' + (isActive ? ' prayer-active' : '');
+                div.style.animationDelay = (i * 0.1) + 's';
+                div.innerHTML = '<div class="text-' + (isActive ? 'white' : 'gray-400') + ' text-3xl mb-3"><i class="fas ' + p.icon + '"></i></div><div class="text-' + (isActive ? 'teal-100' : 'gray-500') + ' text-xs uppercase font-bold mb-1">' + p.name + '</div><div class="text-' + (isActive ? 'white' : 'teal-700') + ' text-2xl font-bold">' + timings[p.key] + '</div>';
+                grid.appendChild(div);
+            });
+
+            if (!nextPrayer) { nextPrayer = 'Fajr'; nextTime = timings.Fajr; }
+            document.getElementById('next-prayer-name').textContent = nextPrayer;
+            document.getElementById('next-prayer-time').textContent = nextTime;
+            startCountdown(nextTime);
+        }
+
+        async function fetchPrayerTimes() {
+            try {
+                const res = await fetch('https://api.aladhan.com/v1/timingsByCity?city=Lahore&country=Pakistan&method=2');
+                const data = await res.json();
+                if (data?.code === 200 && data.data?.timings) {
+                    prayerTimesData = data.data;
+                    const date = prayerTimesData.date;
+                    document.getElementById('current-date').textContent = date.readable + ' | ' + date.hijri.date + ' AH';
+                    renderPrayerGrid(prayerTimesData.timings);
+                    localStorage.setItem('alfalah_prayer_times', JSON.stringify({ updatedAt: Date.now(), times: prayerTimesData.timings }));
+                    return;
+                }
+            } catch (e) {
+                console.error(e);
+            }
+
+            const storedPrayerData = JSON.parse(localStorage.getItem('alfalah_prayer_times') || 'null');
+            if (storedPrayerData?.times) {
+                document.getElementById('current-date').textContent = 'Prayer Board Data';
+                document.getElementById('prayer-location').textContent = 'Kotli Pathana, Pakistan';
+                renderPrayerGrid(storedPrayerData.times);
+            } else {
+                document.getElementById('prayer-grid').innerHTML = '<div class="col-span-full text-center py-12 text-red-600">Prayer times are currently unavailable. Please try again shortly.</div>';
+            }
+        }
+
+        function startCountdown(timeStr) {
+            const [h, m] = timeStr.split(':');
+            const target = new Date();
+            target.setHours(parseInt(h), parseInt(m), 0);
+            if (target < new Date()) target.setDate(target.getDate() + 1);
+
+            if (countdownInterval) clearInterval(countdownInterval);
+            function update() {
+                const diff = target - new Date();
+                if (diff <= 0) { fetchPrayerTimes(); return; }
+                const hrs = Math.floor(diff / 3600000);
+                const mins = Math.floor((diff % 3600000) / 60000);
+                const secs = Math.floor((diff % 60000) / 1000);
+                document.getElementById('countdown-timer').textContent = String(hrs).padStart(2, '0') + ':' + String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+            }
+            update();
+            countdownInterval = setInterval(update, 1000);
+        }
+
+        // Qibla
+        function findQibla() {
+            const status = document.getElementById('qibla-status');
+            status.textContent = 'Locating...';
+            if (!navigator.geolocation) { status.textContent = 'Geolocation not supported'; return; }
+            navigator.geolocation.getCurrentPosition(async (pos) => {
+                try {
+                    const res = await fetch('https://api.aladhan.com/v1/qibla/' + pos.coords.latitude + '/' + pos.coords.longitude);
+                    const data = await res.json();
+                    if (data.code === 200) {
+                        document.getElementById('qibla-arrow').style.transform = 'translate(-50%, -100%) rotate(' + data.data.direction + 'deg)';
+                        status.textContent = 'Qibla is ' + Math.round(data.data.direction) + '° from North';
+                    }
+                } catch (e) { status.textContent = 'Error finding Qibla'; }
+            }, () => { status.textContent = 'Unable to get location'; });
+        }
+
+        // Zakat
+        document.getElementById('gold-val').addEventListener('input', calcZakat);
+        document.getElementById('cash-val').addEventListener('input', calcZakat);
+        function calcZakat() {
+            const gold = parseFloat(document.getElementById('gold-val').value) || 0;
+            const cash = parseFloat(document.getElementById('cash-val').value) || 0;
+            document.getElementById('zakat-result').textContent = 'Rs. ' + ((gold + cash) * 0.025).toLocaleString();
+        }
+
+        // Ramadan Calendar
+        function generateRamadan() {
+            const tbody = document.getElementById('ramadan-body');
+            const start = new Date('2026-02-17');
+            for (let i = 0; i < 30; i++) {
+                const d = new Date(start); d.setDate(start.getDate() + i);
+                const row = document.createElement('tr');
+                row.className = i % 2 === 0 ? 'bg-white' : 'bg-gray-50';
+                row.innerHTML = '<td class="px-3 py-2 border-b">' + (i + 1) + '</td><td class="px-3 py-2 border-b">' + d.toLocaleDateString('en-GB') + '</td><td class="px-3 py-2 border-b text-blue-600 font-semibold text-center">05:' + String(20 + (i % 5)).padStart(2, '0') + '</td><td class="px-3 py-2 border-b text-yellow-600 font-semibold text-center">18:' + String(10 + (i % 8)).padStart(2, '0') + '</td>';
+                tbody.appendChild(row);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchPrayerTimes();
+            generateRamadan();
+        });
+    </script>
+</body>
+
+</html>

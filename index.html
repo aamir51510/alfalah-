@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Falah Foundation | Kotli Pathanan</title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- News Ticker -->
+    <div class="ticker-wrap shadow-md">
+        <div class="ticker text-sm font-semibold">
+            <span class="mx-6"><i class="fas fa-bullhorn text-yellow-300 mr-2"></i> <span
+                    data-en="Upcoming: Masjid Expansion Phase 2" data-ur="آنے والا: مسجد کی توسیع مرحلہ 2">Upcoming:
+                    Masjid Expansion Phase 2</span></span>
+            <span class="mx-4 text-yellow-200">|</span>
+            <span class="mx-6"><i class="fas fa-hand-holding-water text-blue-300 mr-2"></i> <span
+                    data-en="New Filtration Plant in Sector 4" data-ur="سیکٹر 4 میں نیا فلٹریشن پلانٹ">New Filtration
+                    Plant in Sector 4</span></span>
+            <span class="mx-4 text-yellow-200">|</span>
+            <span class="mx-6"><i class="fas fa-road text-gray-300 mr-2"></i> <span
+                    data-en="Street Paving: Main Bazaar Complete" data-ur="مین بازار سڑک پکی مکمل">Street Paving: Main
+                    Bazaar Complete</span></span>
+            <span class="mx-4 text-yellow-200">|</span>
+            <span class="mx-6"><i class="fas fa-book-open text-yellow-300 mr-2"></i> <span
+                    data-en="Islamic Hub: Tafseer Classes Fridays" data-ur="تفسیر کلاسیں ہر جمعہ">Islamic Hub: Tafseer
+                    Classes Fridays</span></span>
+            <span class="mx-4 text-yellow-200">|</span>
+            <span class="mx-6"><i class="fas fa-heart text-red-300 mr-2"></i> <span
+                    data-en="Donate via JazzCash: +923018400715" data-ur="جاز کیش سے عطیہ: 03018400715">Donate via
+                    JazzCash: +923018400715</span></span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-teal-600 to-teal-800 rounded-xl flex items-center justify-center shadow-lg">
+                        <i class="fas fa-mosque text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-teal-800 tracking-tight leading-tight">AL-FALAH FOUNDATION
+                        </h1>
+                        <p class="text-xs text-teal-600 font-semibold tracking-wider">KOTLI PATHANAN</p>
+                    </div>
+                </div>
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="#home"
+                        class="px-4 py-2 rounded-lg text-gray-600 hover:text-teal-700 hover:bg-teal-50 font-medium transition text-sm"
+                        data-en="Home" data-ur="ہوم">Home</a>
+                    <a href="prayer-board.html"
+                        class="px-4 py-2 rounded-lg text-gray-600 hover:text-teal-700 hover:bg-teal-50 font-medium transition text-sm"
+                        data-en="Prayer Times" data-ur="نماز کے اوقات">Prayer Times</a>
+                    <a href="tools.html"
+                        class="px-4 py-2 rounded-lg text-gray-600 hover:text-teal-700 hover:bg-teal-50 font-medium transition text-sm"
+                        data-en="Islamic Tools" data-ur="اسلامی ٹولز">Islamic Tools</a>
+                    <a href="#work"
+                        class="px-4 py-2 rounded-lg text-gray-600 hover:text-teal-700 hover:bg-teal-50 font-medium transition text-sm"
+                        data-en="Our Work" data-ur="ہمارے کام">Our Work</a>
+                    <a href="#gallery"
+                        class="px-4 py-2 rounded-lg text-gray-600 hover:text-teal-700 hover:bg-teal-50 font-medium transition text-sm"
+                        data-en="Gallery & Plans" data-ur="گیلری و منصوبے">Gallery & Plans</a>
+                    <a href="#members"
+                        class="px-4 py-2 rounded-lg text-gray-600 hover:text-teal-700 hover:bg-teal-50 font-medium transition text-sm"
+                        data-en="Members" data-ur="ممبرز">Members</a>
+                    <a href="#" onclick="event.preventDefault(); openAdminAccess()"
+                        class="px-4 py-2 rounded-lg bg-teal-100 text-teal-800 hover:bg-teal-200 font-medium transition text-sm"
+                        data-en="Admin Panel" data-ur="ایڈمن پینل">Admin Panel</a>
+                    <a href="#donate"
+                        class="px-4 py-2 rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold hover:from-yellow-400 hover:to-yellow-500 transition shadow-md text-sm"
+                        data-en="Donate" data-ur="عطیہ">Donate</a>
+                    <button id="lang-toggle"
+                        class="ml-2 bg-teal-50 text-teal-700 px-3 py-1.5 rounded-lg text-sm font-bold hover:bg-teal-100 transition border border-teal-200">اردو
+                        | EN</button>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-600 hover:text-teal-700 p-2"><i
+                        class="fas fa-bars text-2xl"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-3 space-y-1">
+                <a href="#home" class="block py-2 px-3 rounded-lg hover:bg-teal-50 text-sm" data-en="Home"
+                    data-ur="ہوم">Home</a>
+                <a href="prayer-board.html" class="block py-2 px-3 rounded-lg hover:bg-teal-50 text-sm"
+                    data-en="Prayer Times" data-ur="نماز کے اوقات">Prayer Times</a>
+                <a href="tools.html" class="block py-2 px-3 rounded-lg hover:bg-teal-50 text-sm" data-en="Islamic Tools"
+                    data-ur="اسلامی ٹولز">Islamic Tools</a>
+                <a href="#work" class="block py-2 px-3 rounded-lg hover:bg-teal-50 text-sm" data-en="Our Work"
+                    data-ur="ہمارے کام">Our Work</a>
+                <a href="#gallery" class="block py-2 px-3 rounded-lg hover:bg-teal-50 text-sm" data-en="Gallery & Plans"
+                    data-ur="گیلری و منصوبے">Gallery & Plans</a>
+                <a href="#members" class="block py-2 px-3 rounded-lg hover:bg-teal-50 text-sm" data-en="Members"
+                    data-ur="ممبرز">Members</a>
+                <a href="#" onclick="event.preventDefault(); openAdminAccess()"
+                    class="block py-2 px-3 rounded-lg bg-teal-50 text-teal-700 text-sm font-medium"
+                    data-en="Admin Panel" data-ur="ایڈمن پینل">Admin Panel</a>
+                <a href="#donate" class="block py-2 px-3 rounded-lg bg-yellow-100 text-yellow-800 text-sm font-bold"
+                    data-en="Donate" data-ur="عطیہ">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home"
+        class="relative bg-gradient-to-br from-teal-900 via-teal-800 to-emerald-900 min-h-[500px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-yellow-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-teal-400 rounded-full blur-3xl"></div>
+        </div>
+        <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-15">
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <div
+                class="mb-6 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-teal-100 text-sm border border-white/20">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                <span data-en="Serving Kotli Pathana since 2020" data-ur="2020 سے کوٹلی پٹھانہ کی خدمت">Serving Kotli
+                    Pathanan since 2020</span>
+            </div>
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-2xl font-arabic leading-tight"
+                data-en="Bridging Hearts Across Borders" data-ur="سرحدوں کے دلوں کو جوڑنا">Bridging Hearts Across
+                Borders</h2>
+            <p class="text-lg md:text-2xl text-teal-100 mb-10 font-urdu max-w-2xl mx-auto leading-relaxed"
+                data-en="Uplifting Our Village, Serving Humanity with Compassion"
+                data-ur="اپنے گاؤں کی ترقی، ہمدردی کے ساتھ انسانیت کی خدمت">Uplifting Our Village, Serving Humanity with
+                Compassion</p>
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <a href="https://wa.me/923018400715" target="_blank"
+                    class="social-btn flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg">
+                    <i class="fab fa-whatsapp text-xl"></i><span data-en="WhatsApp" data-ur="واٹس ایپ">WhatsApp</span>
+                </a>
+                <a href="#" target="_blank"
+                    class="social-btn flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg">
+                    <i class="fab fa-facebook-f text-xl"></i><span data-en="Facebook" data-ur="فیس بک">Facebook</span>
+                </a>
+                <a href="#" target="_blank"
+                    class="social-btn flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg">
+                    <i class="fab fa-youtube text-xl"></i><span data-en="YouTube" data-ur="یوٹیوب">YouTube</span>
+                </a>
+            </div>
+            <a href="#donate"
+                class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-yellow-600 text-teal-900 font-bold py-4 px-10 rounded-full shadow-2xl hover:from-yellow-400 hover:to-yellow-500 transition transform hover:scale-105 text-lg"
+                data-en="Support Our Cause" data-ur="ہمارے مشن کی حمایت کریں">
+                <i class="fas fa-heart"></i>Support your People
+            </a>
+        </div>
+    </section>
+
+    <!-- Hadith of the Day -->
+    <section class="bg-gradient-to-r from-yellow-50 via-amber-50 to-yellow-50 py-8 border-b border-yellow-200">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-3">
+                <i class="fas fa-book-open text-teal-700 text-lg"></i>
+                <h3 class="text-teal-800 font-bold text-sm uppercase tracking-widest" data-en="Hadith of the Day"
+                    data-ur="آج کی حدیث">Hadith of the Day</h3>
+            </div>
+            <p class="text-gray-700 italic font-arabic text-xl mb-2 leading-relaxed" id="hadith-arabic">"The best of
+                people are those that bring most benefit to the rest of mankind."</p>
+            <p class="text-sm text-gray-500 font-medium" id="hadith-ref">— Dārimi</p>
+        </div>
+    </section>
+
+    <!-- CURRENT PRAYER TIME ONLY (Compact) -->
+    <section class="py-8 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div
+                class="current-prayer-box rounded-2xl p-6 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-mosque text-2xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-teal-100 text-sm" data-en="Current Prayer Time" data-ur="موجودہ نماز کا وقت">
+                            Current Prayer Time</p>
+                        <p class="text-xs text-teal-200" id="current-date-display">--</p>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <div class="flex items-center gap-6">
+                        <div class="text-center">
+                            <p class="text-teal-100 text-xs uppercase" data-en="Current" data-ur="موجودہ">Current</p>
+                            <p class="text-2xl font-bold" id="current-prayer-name">--</p>
+                            <p class="text-teal-200 text-sm" id="current-prayer-time">--:--</p>
+                        </div>
+                        <div class="w-px h-12 bg-white/30"></div>
+                        <div class="text-center">
+                            <p class="text-teal-100 text-xs uppercase" data-en="Next" data-ur="اگلی">Next</p>
+                            <p class="text-2xl font-bold" id="next-prayer-name-small">--</p>
+                            <p class="text-teal-200 text-sm" id="next-prayer-time-small">--:--</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="prayer-board.html"
+                    class="bg-white/20 hover:bg-white/30 text-white px-5 py-2.5 rounded-xl font-semibold transition text-sm whitespace-nowrap">
+                    <i class="fas fa-external-link-alt mr-2"></i><span data-en="Full Timings" data-ur="مکمل اوقات">Full
+                        Timings</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Work Section -->
+    <section id="work" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-en="Our Initiatives"
+                    data-ur="ہمارے منصوبے">Our Initiatives</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-teal-500 to-yellow-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center"><i
+                            class="fas fa-hand-holding-water text-6xl text-white/80"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2" data-en="Water Filtration Plant"
+                            data-ur="فلٹریشن پلانٹ">Water Filtration Plant</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed"
+                            data-en="Providing clean and safe drinking water to the community through modern filtration systems installed across multiple sectors."
+                            data-ur="متعدد سیکٹروں میں جدید فلٹریشن سسٹم کے ذریعے کمیونٹی کو صاف اور محفوظ پانی فراہم کرنا۔">
+                            Providing clean and safe drinking water to the community through modern filtration systems
+                            installed across multiple sectors.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center"><i
+                            class="fas fa-road text-6xl text-white/80"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2" data-en="Village Street Paving"
+                            data-ur="گاؤں کی سڑکوں کی پکی کرن">Village Street Paving</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed"
+                            data-en="Constructing durable concrete roads to improve connectivity, accessibility, and quality of life for all residents."
+                            data-ur="تمام مکینوں کی رسائی اور زندگی کے معیار کو بہتر بنانے کے لیے پائیدار کنکریٹ کی سڑکیں بنانا۔">
+                            Constructing durable concrete roads to improve connectivity, accessibility, and quality of
+                            life for all residents.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center"><i
+                            class="fas fa-mosque text-6xl text-white/80"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2" data-en="Masjid Expansion"
+                            data-ur="مسجد کی توسیع">Masjid Expansion</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed"
+                            data-en="Structural expansion of our central Jamia Masjid to accommodate the growing congregation and enhance prayer facilities."
+                            data-ur="بڑھتی ہوئی جماعت کو accommodate کرنے اور نماز کی سہولیات بڑھانے کے لیے مرکزی جامع مسجد کی تعمیراتی توسیع۔">
+                            Structural expansion of our central Jamia Masjid to accommodate the growing congregation and
+                            enhance prayer facilities.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                        <i class="fas fa-chalkboard-teacher text-6xl text-white/80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2" data-en="Islamic Knowledge Hub"
+                            data-ur="اسلامی نالج ہب">Islamic Knowledge Hub</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed"
+                            data-en="Establishing a center for Quranic education, Tafseer classes, and Islamic studies for all ages, every Friday."
+                            data-ur="ہر عمر کے لیے قرآنی تعلیم، تفسیر کلاسیں، اور اسلامی مطالعہ کا مرکز قائم کرنا، ہر جمعہ۔">
+                            Establishing a center for Quranic education, Tafseer classes, and Islamic studies for all
+                            ages, every Friday.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center"><i
+                            class="fas fa-user-tie text-6xl text-white/80"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2" data-en="Imam Honorariums"
+                            data-ur="امام معاوضے">Imam Honorariums</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed"
+                            data-en="Financial support and monthly stipends for our dedicated Imams and religious leaders serving the community."
+                            data-ur="کمیونٹی کی خدمت کرنے والے ہمارے مخلص اماموں اور مذہبی رہنماؤں کے لیے مالی معاونت اور ماہانہ وظائف۔">
+                            Financial support and monthly stipends for our dedicated Imams and religious leaders serving
+                            the community.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center">
+                        <i class="fas fa-users text-6xl text-white/80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2" data-en="Our Janazgah" data-ur="ہمارا جنازگاہ">
+                            Our Janazgah</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed"
+                            data-en="Maintaining and managing the local funeral services and burial grounds with dignity, care, and Islamic values."
+                            data-ur="مقامی جنازے کی خدمات اور قبرستان کا وقار، احتیاط، اور اسلامی اقدار کے ساتھ انتظام و انصرام۔">
+                            Maintaining and managing the local funeral services and burial grounds with dignity, care,
+                            and Islamic values.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery & Plans Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-en="Gallery & Future Plans"
+                    data-ur="گیلری اور مستقبل کے منصوبے">Gallery & Future Plans</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-teal-500 to-yellow-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600" data-en="Our journey, achievements, and vision for tomorrow"
+                    data-ur="ہمارا سفر، کامیابیاں، اور کل کا وژن">Our journey, achievements, and vision for tomorrow</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12" id="gallery-grid">
+                <div class="gallery-item aspect-square bg-gray-200 rounded-xl flex items-center justify-center cursor-pointer"
+                    onclick="openGalleryModal(0)">
+                    <i class="fas fa-image text-4xl text-gray-400"></i>
+                    <div class="gallery-overlay">
+                        <p class="text-white font-semibold text-sm" data-en="Masjid View" data-ur="مسجد کا منظر">Masjid
+                            View</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gray-200 rounded-xl flex items-center justify-center cursor-pointer"
+                    onclick="openGalleryModal(1)">
+                    <i class="fas fa-image text-4xl text-gray-400"></i>
+                    <div class="gallery-overlay">
+                        <p class="text-white font-semibold text-sm" data-en="Filtration Plant" data-ur="فلٹریشن پلانٹ">
+                            Filtration Plant</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gray-200 rounded-xl flex items-center justify-center cursor-pointer"
+                    onclick="openGalleryModal(2)">
+                    <i class="fas fa-image text-4xl text-gray-400"></i>
+                    <div class="gallery-overlay">
+                        <p class="text-white font-semibold text-sm" data-en="Street Work" data-ur="سڑک کا کام">Street
+                            Work</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gray-200 rounded-xl flex items-center justify-center cursor-pointer"
+                    onclick="openGalleryModal(3)">
+                    <i class="fas fa-image text-4xl text-gray-400"></i>
+                    <div class="gallery-overlay">
+                        <p class="text-white font-semibold text-sm" data-en="Community Event" data-ur="کمیونٹی پروگرام">
+                            Community Event</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mb-12">
+                <button onclick="document.getElementById('gallery-upload').click()"
+                    class="inline-flex items-center gap-2 bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal-700 transition shadow-md"><i
+                        class="fas fa-plus"></i><span data-en="Add New Image" data-ur="نئی تصویر شامل کریں">Add New
+                        Image</span></button>
+                <input type="file" id="gallery-upload" class="hidden" accept="image/*"
+                    onchange="handleGalleryUpload(event)">
+            </div>
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                <div class="bg-gradient-to-r from-teal-600 to-teal-700 px-8 py-4">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2"><i
+                            class="fas fa-clipboard-list"></i><span data-en="Our Vision Board - Future Plans"
+                            data-ur="ہمارا وژن بورڈ - مستقبل کے منصوبے">Our Vision Board - Future Plans</span></h3>
+                </div>
+                <div class="p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="plans-container"></div>
+                    <div class="mt-8 pt-6 border-t border-gray-100">
+                        <h4 class="font-bold text-gray-800 mb-4" data-en="Add New Plan" data-ur="نیا منصوبہ شامل کریں">
+                            Add New Plan</h4>
+                        <div class="flex flex-col md:flex-row gap-3">
+                            <input type="text" id="new-plan-title"
+                                class="flex-1 px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none"
+                                placeholder="Plan title...">
+                            <select id="new-plan-status"
+                                class="px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-500 outline-none">
+                                <option value="planned" data-en="Planned" data-ur="منصوبہ بند">Planned</option>
+                                <option value="in-progress" data-en="In Progress" data-ur="جاری">In Progress</option>
+                                <option value="completed" data-en="Completed" data-ur="مکمل">Completed</option>
+                            </select>
+                            <button onclick="addPlan()"
+                                class="bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal-700 transition"><i
+                                    class="fas fa-plus mr-1"></i><span data-en="Add"
+                                    data-ur="شامل کریں">Add</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section id="members" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-en="Our Members"
+                    data-ur="ہمارے ممبرز">Our Members</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-teal-500 to-yellow-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600" data-en="Dedicated individuals serving our community"
+                    data-ur="ہماری کمیونٹی کی خدمت کرنے والے مخلص افراد">Dedicated individuals serving our community</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-4 mb-8 max-w-2xl mx-auto">
+                <div class="relative flex-1">
+                    <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <input type="text" id="member-search"
+                        class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none"
+                        placeholder="Search members..." onkeyup="filterMembers()">
+                </div>
+                <button onclick="openMemberModal()"
+                    class="bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal-700 transition flex items-center gap-2 justify-center"><i
+                        class="fas fa-user-plus"></i><span data-en="Add Member" data-ur="ممبر شامل کریں">Add
+                        Member</span></button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="members-grid"></div>
+        </div>
+    </section>
+
+    <!-- Admin Panel Section -->
+    <section id="admin" class="py-16 bg-white admin-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-en="Admin Panel"
+                    data-ur="ایڈمن پینل">Admin Panel</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-teal-500 to-yellow-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600" data-en="Income & Expense Management"
+                    data-ur="آمدنی اور اخراجات کا انتظام">Income & Expense Management</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-emerald-500">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm" data-en="Total Income" data-ur="کل آمدنی">Total Income</p>
+                            <p class="text-3xl font-bold text-emerald-600" id="total-income">Rs. 0</p>
+                        </div>
+                        <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center"><i
+                                class="fas fa-arrow-down text-emerald-600 text-2xl"></i></div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-red-500">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm" data-en="Total Expense" data-ur="کل اخراجات">Total Expense
+                            </p>
+                            <p class="text-3xl font-bold text-red-600" id="total-expense">Rs. 0</p>
+                        </div>
+                        <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center"><i
+                                class="fas fa-arrow-up text-red-600 text-2xl"></i></div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm" data-en="Net Balance" data-ur="خالص بیلنس">Net Balance</p>
+                            <p class="text-3xl font-bold text-blue-600" id="net-balance">Rs. 0</p>
+                        </div>
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center"><i
+                                class="fas fa-wallet text-blue-600 text-2xl"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="flex border-b border-gray-100">
+                    <button onclick="switchTab('income')"
+                        class="tab-btn active flex-1 py-4 px-6 font-semibold text-sm flex items-center justify-center gap-2"
+                        id="tab-income"><i class="fas fa-plus-circle"></i><span data-en="Add Income"
+                            data-ur="آمدنی شامل کریں">Add Income</span></button>
+                    <button onclick="switchTab('expense')"
+                        class="tab-btn flex-1 py-4 px-6 font-semibold text-sm text-gray-500 hover:text-gray-700 flex items-center justify-center gap-2"
+                        id="tab-expense"><i class="fas fa-minus-circle"></i><span data-en="Add Expense"
+                            data-ur="اخراجات شامل کریں">Add Expense</span></button>
+                    <button onclick="switchTab('records')"
+                        class="tab-btn flex-1 py-4 px-6 font-semibold text-sm text-gray-500 hover:text-gray-700 flex items-center justify-center gap-2"
+                        id="tab-records"><i class="fas fa-list"></i><span data-en="All Records"
+                            data-ur="تمام ریکارڈ">All Records</span></button>
+                </div>
+                <div class="p-8">
+                    <div id="panel-income" class="admin-panel active">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div><label class="block text-sm font-medium text-gray-700 mb-2" data-en="Amount (PKR)"
+                                    data-ur="رقم (روپے)">Amount (PKR)</label><input type="number" id="income-amount"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none"
+                                    placeholder="Enter amount"></div>
+                            <div><label class="block text-sm font-medium text-gray-700 mb-2" data-en="Source"
+                                    data-ur="ذریعہ">Source</label><select id="income-source"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 outline-none">
+                                    <option value="Donation">Donation</option>
+                                    <option value="Zakat">Zakat</option>
+                                    <option value="Membership Fee">Membership Fee</option>
+                                    <option value="Other">Other</option>
+                                </select></div>
+                            <div class="md:col-span-2"><label class="block text-sm font-medium text-gray-700 mb-2"
+                                    data-en="Description" data-ur="تفصیل">Description</label><input type="text"
+                                    id="income-desc"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none"
+                                    placeholder="Enter description"></div>
+                        </div>
+                        <button onclick="addTransaction('income')"
+                            class="mt-6 w-full bg-emerald-600 text-white py-3 rounded-xl font-bold hover:bg-emerald-700 transition shadow-md"><i
+                                class="fas fa-save mr-2"></i><span data-en="Save Income Record"
+                                data-ur="آمدنی کا ریکارڈ محفوظ کریں">Save Income Record</span></button>
+                    </div>
+                    <div id="panel-expense" class="admin-panel">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div><label class="block text-sm font-medium text-gray-700 mb-2" data-en="Amount (PKR)"
+                                    data-ur="رقم (روپے)">Amount (PKR)</label><input type="number" id="expense-amount"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none"
+                                    placeholder="Enter amount"></div>
+                            <div><label class="block text-sm font-medium text-gray-700 mb-2" data-en="Category"
+                                    data-ur="زمرہ">Category</label><select id="expense-category"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-500 outline-none">
+                                    <option value="Masjid">Masjid</option>
+                                    <option value="Filtration Plant">Filtration Plant</option>
+                                    <option value="Street Work">Street Work</option>
+                                    <option value="Imam Salary">Imam Salary</option>
+                                    <option value="Utilities">Utilities</option>
+                                    <option value="Other">Other</option>
+                                </select></div>
+                            <div class="md:col-span-2"><label class="block text-sm font-medium text-gray-700 mb-2"
+                                    data-en="Description" data-ur="تفصیل">Description</label><input type="text"
+                                    id="expense-desc"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none"
+                                    placeholder="Enter description"></div>
+                        </div>
+                        <button onclick="addTransaction('expense')"
+                            class="mt-6 w-full bg-red-600 text-white py-3 rounded-xl font-bold hover:bg-red-700 transition shadow-md"><i
+                                class="fas fa-save mr-2"></i><span data-en="Save Expense Record"
+                                data-ur="اخراجات کا ریکارڈ محفوظ کریں">Save Expense Record</span></button>
+                    </div>
+                    <div id="panel-records" class="admin-panel">
+                        <div class="mb-4 flex flex-col md:flex-row gap-3">
+                            <input type="text" id="record-search"
+                                class="flex-1 px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none"
+                                placeholder="Search by date, type, category or description" oninput="renderRecords()">
+                            <select id="record-filter-type"
+                                class="px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-500 outline-none"
+                                onchange="renderRecords()">
+                                <option value="">All Types</option>
+                                <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                            </select>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead class="bg-gray-50 text-gray-600 uppercase text-xs">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left rounded-tl-lg" data-en="Date" data-ur="تاریخ">
+                                            Date</th>
+                                        <th class="px-4 py-3 text-left" data-en="Type" data-ur="قسم">Type</th>
+                                        <th class="px-4 py-3 text-left" data-en="Category" data-ur="زمرہ">Category</th>
+                                        <th class="px-4 py-3 text-left" data-en="Description" data-ur="تفصیل">
+                                            Description</th>
+                                        <th class="px-4 py-3 text-right rounded-tr-lg" data-en="Amount" data-ur="رقم">
+                                            Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="records-table-body"></tbody>
+                            </table>
+                        </div>
+                        <div id="no-records" class="text-center py-12 text-gray-400"><i
+                                class="fas fa-inbox text-4xl mb-3"></i>
+                            <p data-en="No records yet" data-ur="ابھی تک کوئی ریکارڈ نہیں">No records yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate"
+        class="py-20 bg-gradient-to-br from-teal-900 via-teal-800 to-emerald-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-teal-400 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-14">
+                <div
+                    class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-teal-100 text-sm border border-white/20 mb-4">
+                    <i class="fas fa-heart text-red-300"></i><span data-en="Your Support Changes Lives"
+                        data-ur="آپ کی مدد زندگیاں بدلتی ہے">Your Support Changes Lives</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4" data-en="Support Our Mission"
+                    data-ur="ہمارے مشن کی حمایت کریں">Support Our Mission</h2>
+                <p class="text-teal-200 max-w-2xl mx-auto text-lg"
+                    data-en="Every donation brings us closer to building a better Kotli Pathana for everyone."
+                    data-ur="ہر عطیہ ہمیں ایک بہتر کوٹلی پٹھانہ بنانے کے قریب لاتا ہے۔">Every donation brings us closer
+                    to building a better Kotli Pathana for everyone.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div
+                    class="bg-white text-gray-800 rounded-2xl p-8 shadow-2xl transform hover:scale-[1.02] transition duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-green-100 rounded-full -mr-16 -mt-16 opacity-50">
+                    </div>
+                    <div class="flex items-center justify-center mb-6">
+                        <div
+                            class="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-mobile-alt text-3xl text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-1 text-gray-900">JazzCash</h3>
+                    <p class="text-center text-gray-500 mb-8 text-sm" data-en="Instant Mobile Transfer"
+                        data-ur="فوری موبائل ٹرانسفر">Instant Mobile Transfer</p>
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 mb-4">
+                        <p class="text-xs text-gray-400 uppercase font-bold mb-2 tracking-wider"
+                            data-en="Account Number" data-ur="اکاؤنٹ نمبر">Account Number</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-mono font-bold text-teal-700 tracking-wide">+92 301
+                                8400715</span>
+                            <button onclick="copyToClipboard('+923018400715')"
+                                class="w-10 h-10 bg-teal-100 text-teal-700 rounded-lg hover:bg-teal-200 transition flex items-center justify-center"><i
+                                    class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-sm font-semibold text-gray-700">Muhammad Zeeshan Khan</p>
+                        <p class="text-xs text-gray-400 mt-1" data-en="Account Title" data-ur="اکاؤنٹ کا نام">Account
+                            Title</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white text-gray-800 rounded-2xl p-8 shadow-2xl transform hover:scale-[1.02] transition duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full -mr-16 -mt-16 opacity-50">
+                    </div>
+                    <div class="flex items-center justify-center mb-6">
+                        <div
+                            class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-university text-3xl text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-1 text-gray-900" data-en="Bank Transfer"
+                        data-ur="بینک ٹرانسفر">Bank Transfer</h3>
+                    <p class="text-center text-gray-500 mb-8 text-sm" data-en="Direct Deposit" data-ur="براہ راست جمع">
+                        Direct Deposit</p>
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 mb-4 space-y-3">
+                        <div class="flex justify-between"><span class="text-xs text-gray-400 uppercase font-bold"
+                                data-en="Bank" data-ur="بینک">Bank</span><span
+                                class="text-sm font-semibold text-gray-700">[Your Bank Name]</span></div>
+                        <div class="flex justify-between"><span
+                                class="text-xs text-gray-400 uppercase font-bold">IBAN</span><span
+                                class="text-sm font-mono font-semibold text-gray-700">PKXX XXXX XXXX</span></div>
+                        <div class="flex justify-between"><span class="text-xs text-gray-400 uppercase font-bold"
+                                data-en="Title" data-ur="نام">Title</span><span
+                                class="text-sm font-semibold text-gray-700">Al-Falah Foundation</span></div>
+                    </div>
+                    <p class="text-xs text-center text-gray-400" data-en="Share receipt on WhatsApp after transfer"
+                        data-ur="منتقلی کے بعد واٹس ایپ پر رسید بھیجیں">Share receipt on WhatsApp after transfer</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <p class="text-teal-200 mb-4" data-en="Share with friends and family"
+                    data-ur="دوستوں اور خاندان کے ساتھ شیئر کریں">Share with friends and family</p>
+                <div class="flex justify-center gap-4">
+                    <a href="https://wa.me/?text=Support%20Al-Falah%20Foundation%20Kotli%20Pathana%20-%20JazzCash%3A%20%2B923018400715"
+                        target="_blank"
+                        class="social-btn w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 shadow-lg"><i
+                            class="fab fa-whatsapp text-xl"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61591521192446" target="_self"
+                        class="social-btn w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 shadow-lg"><i
+                            class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" target="_blank"
+                        class="social-btn w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 shadow-lg"><i
+                            class="fab fa-youtube text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-en="Contact Us"
+                    data-ur="ہم سے رابطہ کریں">Contact Us</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-teal-500 to-yellow-500 mx-auto rounded-full"></div>
+            </div>
+            <div
+                class="max-w-2xl mx-auto bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                <div class="flex flex-col items-center space-y-6">
+                    <div class="text-center">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-teal-500 to-teal-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fas fa-user-shield text-4xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Muhammad Zeeshan Khan</h3>
+                        <p class="text-teal-600 font-medium" data-en="Founder & Director" data-ur="بانی و ڈائریکٹر">
+                            Founder & Director</p>
+                    </div>
+                    <div class="w-full border-t border-gray-200 pt-6">
+                        <div class="flex items-center justify-center space-x-6">
+                            <a href="tel:+923018400715"
+                                class="flex items-center space-x-2 text-gray-600 hover:text-teal-700 transition"><i
+                                    class="fas fa-phone-alt text-xl"></i><span class="font-bold">+92 301
+                                    8400715</span></a>
+                        </div>
+                        <div class="flex items-center justify-center space-x-6 mt-4">
+                            <a href="https://wa.me/923018400715" target="_blank"
+                                class="flex items-center space-x-2 text-green-600 hover:text-green-700 transition"><i
+                                    class="fab fa-whatsapp text-xl"></i><span>WhatsApp</span></a>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <p class="text-gray-500 text-sm"><i class="fas fa-map-marker-alt mr-2"></i>Kotli Pathana,
+                            Pakistan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="mb-2 font-arabic text-lg">بِسْمِ ٱللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+            <p class="text-gray-400 text-sm"> Al-Falah Foundation Kotli Pathana. All Rights Reserved.</p>
+            <p class="text-gray-500 text-xs mt-2" data-en="Designed for the upliftment of our village."
+                data-ur="اپنے گاؤں کی ترقی کے لیے ڈیزائن کیا گیا۔">Designed for the upliftment of our village.</p>
+        </div>
+    </footer>
+
+    <!-- Member Modal -->
+    <div class="modal" id="member-modal">
+        <div class="modal-content p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gray-800" data-en="Add New Member" data-ur="نیا ممبر شامل کریں">Add
+                    New Member</h3>
+                <button onclick="closeMemberModal()" class="text-gray-400 hover:text-gray-600"><i
+                        class="fas fa-times text-xl"></i></button>
+            </div>
+            <div class="space-y-4">
+                <div><label class="block text-sm font-medium text-gray-700 mb-1" data-en="Full Name"
+                        data-ur="پورا نام">Full Name</label><input type="text" id="member-name"
+                        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none"
+                        placeholder="Enter name"></div>
+                <div><label class="block text-sm font-medium text-gray-700 mb-1" data-en="Role/Position"
+                        data-ur="عہدہ">Role/Position</label><input type="text" id="member-role"
+                        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none"
+                        placeholder="e.g. Secretary, Treasurer"></div>
+                <div><label class="block text-sm font-medium text-gray-700 mb-1" data-en="Phone Number"
+                        data-ur="فون نمبر">Phone Number</label><input type="text" id="member-phone"
+                        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none"
+                        placeholder="+92..."></div>
+                <button onclick="addMember()"
+                    class="w-full bg-teal-600 text-white py-3 rounded-xl font-bold hover:bg-teal-700 transition"><i
+                        class="fas fa-user-plus mr-2"></i><span data-en="Add Member" data-ur="ممبر شامل کریں">Add
+                        Member</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="admin-access-modal">
+        <div class="modal-content p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gray-800">Admin Access</h3>
+                <button type="button" onclick="closeAdminAccessModal()" class="text-gray-400 hover:text-gray-600"><i
+                        class="fas fa-times text-xl"></i></button>
+            </div>
+            <p class="text-sm text-gray-600 mb-4">Enter the admin password to view the private panel.</p>
+            <input type="password" id="admin-password"
+                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none"
+                placeholder="Enter password" onkeydown="if(event.key==='Enter'){submitAdminAccess(event)}">
+            <div class="flex gap-3 mt-4">
+                <button type="button" onclick="submitAdminAccess(event)"
+                    class="flex-1 bg-teal-600 text-white py-3 rounded-xl font-bold hover:bg-teal-700 transition">Access
+                    Panel</button>
+                <button type="button" onclick="closeAdminAccessModal()"
+                    class="flex-1 bg-gray-200 text-gray-700 py-3 rounded-xl font-bold hover:bg-gray-300 transition">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
