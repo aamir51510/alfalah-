@@ -245,6 +245,43 @@ function showAdminSection() {
   section.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+// Sirf Member List ke liye password variable
+const MEMBER_LIST_CODE = "admin5"; 
+
+// 1. Member List ka modal open karne ke liye function
+function openMemberListAccess() {
+  const modal = document.getElementById("admin-access-modal");
+  if (modal) modal.classList.add("active");
+  
+  // Form ke submit event ko badal kar hamare naye function par set karein
+  const form = document.querySelector("#admin-access-modal form");
+  if (form) {
+    form.setAttribute("onsubmit", "submitMemberListAccess(event)");
+  }
+}
+
+// 2. Password check karne aur group-list.html kholne ke liye function
+function submitMemberListAccess(event) {
+  if (event) event.preventDefault();
+  const field = document.getElementById("admin-password");
+  const enteredCode = field ? field.value : "";
+
+  if (enteredCode === MEMBER_LIST_CODE) {
+    sessionStorage.setItem("alfalah_member_access", "true");
+    
+    // Modal ko close karna
+    const modal = document.getElementById("admin-access-modal");
+    if (modal) modal.classList.remove("active");
+    if (field) field.value = "";
+    
+    // Seedha group-list.html file par redirect karna
+    window.location.href = "group-list.html"; 
+  } else {
+    alert("Access denied");
+  }
+}
+
+
 function switchTab(tab) {
   document
     .querySelectorAll(".tab-btn")
